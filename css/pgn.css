@@ -1,0 +1,38 @@
+.chapter-name {
+  text-shadow: 4px 4px 8px #333;
+}
+
+.nationals-link {
+    cursor: pointer;
+}
+
+.push-down-nav {
+    margin-top: 90px;
+}
+
+body {
+    
+    background: transparent;
+}
+
+.back-image {
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.back-image-other {
+    max-width: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
