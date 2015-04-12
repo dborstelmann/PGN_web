@@ -25,7 +25,7 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-    <div class="navbar-wrapper">
+    <div class="navbar-wrapper opac">
       <div class="container">
 
         <nav class="navbar navbar-inverse navbar-static-top" style="background-color: rgba(255, 255, 255, 0.9);">
@@ -68,7 +68,7 @@
 
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" style="margin-bottom: 40px;" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
 <!--
       <ol class="carousel-indicators">
@@ -79,10 +79,10 @@
 -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="img/withPledges.jpg" alt="First slide">
+          <img class="first-slide opac" id="main-img" src="img/withPledges.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h2 class="chapter-name">Delta Upsilon Chapter</h2>
+              <h2 class="chapter-name opac">Delta Upsilon Chapter</h2>
             </div>
           </div>
         </div>
@@ -127,19 +127,19 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="img/girls.jpg" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle opac" id="brotherhood-circ" src="img/girls.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Brotherhood</h2>
           <p>Our family-oriented culture stems from our social pillar, which is filled with a variety of events to build our brotherhood.</p>
           <p><a class="btn btn-default" href="pillars.html" role="button">Learn More &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="img/zoo.jpg" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle opac" id="philanthropy-circ" src="img/zoo.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Philanthropy</h2>
           <p>Through Philanthropy, Phi Gamma Nu chapters are able to build strong bonds with their respective communities as well. As the fraternity’s brothers believe in civic responsibility, chapters nationwide organize and participate in community outreach events like fundraisers and working with local animal shelters.</p>
           <p><a class="btn btn-default" href="pillars.html" role="button">Learn More &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="img/exec.jpg" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle opac" id="professionalism-circ" src="img/exec.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Professionalism</h2>
           <p>The Delta Upsilon Chapter consists of members who are motivated to develop themselves and their brothers professionally through internal and external networking.</p>
           <p><a class="btn btn-default" href="pillars.html" role="button">Learn More &raquo;</a></p>
@@ -194,6 +194,37 @@
     <!--
         Custom Scripts
     -->
+      <script type="text/javascript">
+        $(window).load(function(){ 
+            $('.chapter-name').removeClass('opac');
+            $('.navbar-wrapper').removeClass('opac');
+            $('#main-img').removeClass('opac');
+            
+            $('#main-img').addClass('animated slideInLeft');
+            $('.chapter-name').addClass('animated slideInLeft');
+            $('.navbar-wrapper').addClass('animated slideInRight');
+            setTimeout(function(){
+                $('#professionalism-circ').removeClass('opac');
+                $('#philanthropy-circ').removeClass('opac');
+                $('#brotherhood-circ').removeClass('opac');
+                
+                $('#professionalism-circ').addClass('animated bounceInUp');
+                $('#philanthropy-circ').addClass('animated bounceInUp');
+                $('#brotherhood-circ').addClass('animated bounceInUp');
+            }, 500);
+            
+        });
+        
+//        $('').bind('beforeunload', function(){
+//            $('#main-img').addClass('animated slideOutLeft');
+//            $('.chapter-name').addClass('animated slideOutLeft');
+//            $('.navbar-wrapper').addClass('animated slideOutRight');
+//
+//            $('#professionalism-circ').addClass('animated bounceOutUp');
+//            $('#philanthropy-circ').addClass('animated bounceOutUp');
+//            $('#brotherhood-circ').addClass('animated bounceOutUp');
+//        });
+      </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
