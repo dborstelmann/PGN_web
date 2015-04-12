@@ -14,20 +14,13 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+      
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/animate.css">
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/pgn.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -54,7 +47,15 @@
                 <li><a href="contact.html">Contact Us</a></li>
               </ul>
                 <div class="navbar-header navbar-right" style="margin-right: 6px; margin-top: 4px;">
-                <button type="button" class="btn btn-danger" style="margin-top: 4px;">Log In</button>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="user-input" placeholder="Username" style="margin-top: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="pass-input" placeholder="Password" style="margin-top: 4px;">
+                  </div>
+                  <button type="submit" class="btn btn-danger" id="log-in-button" style="margin-top: 4px;">Log In</button>
+                </form>
             </div>
             </div>
             
@@ -166,7 +167,7 @@
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
           <h2 class="featurette-heading">Contact Us. <span class="text-muted"></span></h2>
-          <p class="lead">If you have any need to contact us at all, please feel completely free to do so. We won't bite.</p>
+          <p class="lead">If you have any need to contact us for any reason, please feel completely free to do so. We won't bite.</p>
           <p><a class="btn btn-default" href="contact.html" role="button">Contact Info &raquo;</a></p>
         </div>
         <div class="col-md-5 col-md-pull-7">
@@ -188,16 +189,15 @@
       </footer>
 
     </div><!-- /.container -->
-
+      
+      
+    <!--
+        Custom Scripts
+    -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/vendor/holder.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
