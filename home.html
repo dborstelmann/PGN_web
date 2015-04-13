@@ -14,25 +14,18 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+      
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/animate.css">
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/pgn.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-    <div class="navbar-wrapper">
+    <div class="navbar-wrapper opac">
       <div class="container">
 
         <nav class="navbar navbar-inverse navbar-static-top" style="background-color: rgba(255, 255, 255, 0.9);">
@@ -54,7 +47,15 @@
                 <li><a href="contact.html">Contact Us</a></li>
               </ul>
                 <div class="navbar-header navbar-right" style="margin-right: 6px; margin-top: 4px;">
-                <button type="button" class="btn btn-danger" style="margin-top: 4px;">Log In</button>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="user-input" placeholder="Username" style="margin-top: 4px;">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="pass-input" placeholder="Password" style="margin-top: 4px;">
+                  </div>
+                  <button type="submit" class="btn btn-danger" id="log-in-button" style="margin-top: 4px;">Log In</button>
+                </form>
             </div>
             </div>
             
@@ -67,7 +68,7 @@
 
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" style="margin-bottom: 40px;" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
 <!--
       <ol class="carousel-indicators">
@@ -78,10 +79,10 @@
 -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="img/withPledges.jpg" alt="First slide">
+          <img class="first-slide opac" id="main-img" src="img/withPledges.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h2 class="chapter-name">Delta Upsilon Chapter</h2>
+              <h2 class="chapter-name opac">Delta Upsilon Chapter</h2>
             </div>
           </div>
         </div>
@@ -126,19 +127,19 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="img/girls.jpg" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle opac" id="brotherhood-circ" src="img/girls.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Brotherhood</h2>
           <p>Our family-oriented culture stems from our social pillar, which is filled with a variety of events to build our brotherhood.</p>
           <p><a class="btn btn-default" href="pillars.html" role="button">Learn More &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="img/zoo.jpg" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle opac" id="philanthropy-circ" src="img/zoo.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Philanthropy</h2>
           <p>Through Philanthropy, Phi Gamma Nu chapters are able to build strong bonds with their respective communities as well. As the fraternity’s brothers believe in civic responsibility, chapters nationwide organize and participate in community outreach events like fundraisers and working with local animal shelters.</p>
           <p><a class="btn btn-default" href="pillars.html" role="button">Learn More &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="img/exec.jpg" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle opac" id="professionalism-circ" src="img/exec.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Professionalism</h2>
           <p>The Delta Upsilon Chapter consists of members who are motivated to develop themselves and their brothers professionally through internal and external networking.</p>
           <p><a class="btn btn-default" href="pillars.html" role="button">Learn More &raquo;</a></p>
@@ -166,7 +167,7 @@
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
           <h2 class="featurette-heading">Contact Us. <span class="text-muted"></span></h2>
-          <p class="lead">If you have any need to contact us at all, please feel completely free to do so. We won't bite.</p>
+          <p class="lead">If you have any need to contact us for any reason, please feel completely free to do so. We won't bite.</p>
           <p><a class="btn btn-default" href="contact.html" role="button">Contact Info &raquo;</a></p>
         </div>
         <div class="col-md-5 col-md-pull-7">
@@ -188,16 +189,46 @@
       </footer>
 
     </div><!-- /.container -->
-
+      
+      
+    <!--
+        Custom Scripts
+    -->
+      <script type="text/javascript">
+        $(window).load(function(){ 
+            $('.chapter-name').removeClass('opac');
+            $('.navbar-wrapper').removeClass('opac');
+            $('#main-img').removeClass('opac');
+            
+            $('#main-img').addClass('animated slideInLeft');
+            $('.chapter-name').addClass('animated slideInLeft');
+            $('.navbar-wrapper').addClass('animated slideInRight');
+            setTimeout(function(){
+                $('#professionalism-circ').removeClass('opac');
+                $('#philanthropy-circ').removeClass('opac');
+                $('#brotherhood-circ').removeClass('opac');
+                
+                $('#professionalism-circ').addClass('animated bounceInUp');
+                $('#philanthropy-circ').addClass('animated bounceInUp');
+                $('#brotherhood-circ').addClass('animated bounceInUp');
+            }, 500);
+            
+        });
+        
+//        $('').bind('beforeunload', function(){
+//            $('#main-img').addClass('animated slideOutLeft');
+//            $('.chapter-name').addClass('animated slideOutLeft');
+//            $('.navbar-wrapper').addClass('animated slideOutRight');
+//
+//            $('#professionalism-circ').addClass('animated bounceOutUp');
+//            $('#philanthropy-circ').addClass('animated bounceOutUp');
+//            $('#brotherhood-circ').addClass('animated bounceOutUp');
+//        });
+      </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/vendor/holder.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

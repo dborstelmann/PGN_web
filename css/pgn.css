@@ -11,8 +11,8 @@
 }
 
 body {
-    
     background: transparent;
+    background-color: #fff;
 }
 
 .back-image {
@@ -35,4 +35,8 @@ body {
     position: fixed;
     right: 0;
     top: 0;
+}
+
+.opac {
+    opacity: 0;
 }
