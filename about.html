@@ -26,14 +26,16 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/animate.css">
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/pgn.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-    <img class="back-image-other" src="img/arch.jpg">
-    <div class="navbar-wrapper">
+    <img class="back-image-other opac" src="img/arch.jpg">
+    <div class="navbar-wrapper opac">
       <div class="container">
 
         <nav class="navbar navbar-inverse navbar-static-top" style="background-color: rgba(255, 255, 255, 0.3);">
@@ -45,14 +47,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="home.html">Phi Gamma Nu</a>
+              <a class="navbar-brand nav-click" style="font-family: 'Georgia', serif; font-size: 32px;" href="home.html">&#934; &#915; &#925;</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="pillars.html">Our Pillars</a></li>
-                <li><a href="recruitment.html">Recruitment</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a class="nav-click" href="#">About Us</a></li>
+                <li><a class="nav-click" href="pillars.html">Our Pillars</a></li>
+                <li><a class="nav-click" href="recruitment.html">Recruitment</a></li>
+                <li><a class="nav-click" href="contact.html">Contact Us</a></li>
               </ul>
             </div>
           </div>
@@ -68,22 +70,22 @@
         <div class="col-sm-8 blog-main">
 
             <div class="blog-post" style="color: #333;">
-            <h2 class="blog-post-title">History</h2>
-            <p>Phi Gamma Nu was founded on February 17th, 1924 on Northwestern University’s Chicago campus. Originally only open to females, Sylvia Pekar Arnold and five other women joined together to form the first chapter.</p>
-            <p>In 1974, in accordance to Title IX, Phi Gamma Nu opened its doors to men to become one of the nation’s premier co-educational fraternities. Phi Gamma Nu is known as a force for professionalism, service, and brotherhood.</p>
-            <p>Established in 2013, Phi Gamma Nu Delta Upsilon strives to make a difference in the St. Louis Community. Through Philanthropy, Phi Gamma Nu chapters are able to build strong bonds with their respective communities as well. As the fraternity's brothers believe in civic responsibility, chapters nationwide organize and participate in community outreach events like fundraisers and working with local animal shelters.  We also work hard to make and maintain relationships with the other business fraternities and organizations to cultivate friendships and a strong professional network. Feel free to further explore our activities through our three pillars.</p>
+            <h2 class="blog-post-title ani1 opac">History</h2>
+            <p class="ani2 opac">Phi Gamma Nu was founded on February 17th, 1924 on Northwestern University’s Chicago campus. Originally only open to females, Sylvia Pekar Arnold and five other women joined together to form the first chapter.</p>
+            <p class="ani3 opac">In 1974, in accordance to Title IX, Phi Gamma Nu opened its doors to men to become one of the nation’s premier co-educational fraternities. Phi Gamma Nu is known as a force for professionalism, service, and brotherhood.</p>
+            <p class="ani4 opac">Established in 2013, Phi Gamma Nu Delta Upsilon strives to make a difference in the St. Louis Community. Through Philanthropy, Phi Gamma Nu chapters are able to build strong bonds with their respective communities as well. As the fraternity's brothers believe in civic responsibility, chapters nationwide organize and participate in community outreach events like fundraisers and working with local animal shelters.  We also work hard to make and maintain relationships with the other business fraternities and organizations to cultivate friendships and a strong professional network. Feel free to further explore our activities through our three pillars.</p>
 
           </div><!-- /.blog-post -->
             
           <div class="blog-post" style="color: #333;">
-            <h2 class="blog-post-title">Purpose</h2>
-            <p>Phi Gamma Nu was founded for the purpose of fostering the study of business in colleges and universities; to uphold the interest of our Alma Maters through the encouragement of high scholarship, participation in school activities, and the association of students for their mutual advancement; to promote professional competency and achievement in the field of business; and to further a high standard of commercial ethics and culture in civic and professional enterprises.</p>
+            <h2 class="blog-post-title ani5 opac">Purpose</h2>
+            <p class="ani6 opac">Phi Gamma Nu was founded for the purpose of fostering the study of business in colleges and universities; to uphold the interest of our Alma Maters through the encouragement of high scholarship, participation in school activities, and the association of students for their mutual advancement; to promote professional competency and achievement in the field of business; and to further a high standard of commercial ethics and culture in civic and professional enterprises.</p>
 
           </div><!-- /.blog-post -->
 
           <div class="blog-post" style="margin-bottom: 60px; color: #333;">
-            <h2 class="blog-post-title">Vision</h2>
-            <ul>
+            <h2 class="blog-post-title ani7 opac">Vision</h2>
+            <ul class="ani8 opac">
               <li>To provide an environment outside the classroom where students might broaden their understanding of business.</li>
               <li>To foster the professional development of students through tours, forums, speakers and research projects.</li>
               <li>To stress the importance of high professional ethics, rigid standards and exemplary practices.</li>
@@ -96,7 +98,7 @@
           </div><!-- /.blog-post -->
 
           
-            <footer>
+            <footer class="ani9 opac" style="color: #333;">
                 <p class="pull-right"><a href="#">Back to top</a></p>
                 <p>&middot; Phi Gamma Nu Professional Fraternity &middot;<a class="nationals-link" href="http://phigammanu.com"> Nationals </a>&middot;</p>
             </footer>
@@ -109,5 +111,76 @@
       
     </div><!-- /.container -->
     
+      <script type="text/javascript">
+        $(window).load(function(){ 
+            $('.navbar-wrapper').removeClass('opac');
+            $('.back-image-other').removeClass('opac');
+            
+            $('.back-image-other').addClass('animated fadeIn');
+            $('.navbar-wrapper').addClass('animated slideInLeft');
+            setTimeout(function(){
+                $('.ani1').removeClass('opac');
+                $('.ani1').addClass('animated bounceInUp');
+            }, 800);
+            setTimeout(function(){
+                $('.ani2').removeClass('opac');
+                $('.ani2').addClass('animated bounceInUp');
+            }, 1000);
+            setTimeout(function(){
+                $('.ani3').removeClass('opac');
+                $('.ani3').addClass('animated bounceInUp');
+            }, 1200);
+            setTimeout(function(){
+                $('.ani4').removeClass('opac');
+                $('.ani4').addClass('animated bounceInUp');
+            }, 1400);
+            setTimeout(function(){
+                $('.ani5').removeClass('opac');
+                $('.ani5').addClass('animated bounceInUp');
+            }, 1600);
+            setTimeout(function(){
+                $('.ani6').removeClass('opac');
+                $('.ani6').addClass('animated bounceInUp');
+            }, 1800);
+            setTimeout(function(){
+                $('.ani7').removeClass('opac');
+                $('.ani7').addClass('animated bounceInUp');
+            }, 2000);
+            setTimeout(function(){
+                $('.ani8').removeClass('opac');
+                $('.ani8').addClass('animated bounceInUp');
+            }, 2200);
+            setTimeout(function(){
+                $('.ani9').removeClass('opac');
+                $('.ani9').addClass('animated bounceInUp');
+            }, 2400);
+            
+        });
+          
+        $('.nav-click').click(function(){
+            var url = $(this).attr('href');
+            if (url === "#") {
+                return;
+            }
+            $('.back-image-other').addClass('animated fadeOut');
+            $('.navbar-wrapper').addClass('animated slideOutLeft');
+            $('.ani9').addClass('animated bounceOutDown');
+            $('.ani8').addClass('animated bounceOutDown');
+            $('.ani7').addClass('animated bounceOutDown');
+            $('.ani6').addClass('animated bounceOutDown');
+            $('.ani5').addClass('animated bounceOutDown');
+            $('.ani4').addClass('animated bounceOutDown');
+            $('.ani3').addClass('animated bounceOutDown');
+            $('.ani2').addClass('animated bounceOutDown');
+            $('.ani1').addClass('animated bounceOutDown');
+            
+            setTimeout(function(){
+                document.location.href = url;
+            }, 1000);
+            return false;
+        });
+        
+      </script>
+      
   </body>
 </html>

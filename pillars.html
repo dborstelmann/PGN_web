@@ -17,7 +17,6 @@
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -26,14 +25,17 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/animate.css">
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/pgn.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-    <img class="back-image" src="img/caryatids.jpg">
-    <div class="navbar-wrapper">
+    <img class="back-image opac" src="img/caryatids.jpg">
+    <div class="navbar-wrapper opac">
       <div class="container">
 
         <nav class="navbar navbar-inverse navbar-static-top" style="background-color: rgba(255, 255, 255, 0.3)">
@@ -45,14 +47,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="home.html">Phi Gamma Nu</a>
+              <a class="navbar-brand nav-click" style="font-family: 'Georgia', serif; font-size: 32px;" href="home.html">&#934; &#915; &#925;</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="pillars.html">Our Pillars</a></li>
-                <li><a href="recruitment.html">Recruitment</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a class="nav-click" href="about.html">About Us</a></li>
+                <li><a class="nav-click" href="#">Our Pillars</a></li>
+                <li><a class="nav-click" href="recruitment.html">Recruitment</a></li>
+                <li><a class="nav-click" href="contact.html">Contact Us</a></li>
               </ul>
             </div>
           </div>
@@ -67,23 +69,23 @@
         <div class="col-sm-8 blog-main">
 
           <div class="blog-post" style="margin-bottom: 60px; color: #333;">
-            <h2 class="blog-post-title">Mission</h2>
+            <h2 class="blog-post-title ani1 opac">Mission</h2>
 
-            <p>Phi Gamma Nu proudly upholds Three National Pillars which represent the underlying ideals of the fraternity. As such, events and activities organized by Phi Gamma Nu brothers work to fulfill these goals in practice.</p>
-            <blockquote style="border-left-color: #5d1015;">
+            <p class="ani2 opac">Phi Gamma Nu proudly upholds Three National Pillars which represent the underlying ideals of the fraternity. As such, events and activities organized by Phi Gamma Nu brothers work to fulfill these goals in practice.</p>
+            <blockquote class="ani3 opac" style="border-left-color: #BA111C;">
               <p>Through <strong>Professionalism</strong>, Phi Gamma Nu seeks to constantly spread interest in the business field throughout college campuses. To this end, the National Board promotes the chapters' organization of creative professional events including networking workshops, mock interviews, case competitions and speaker events.</p>
             </blockquote>
-            <blockquote style="border-left-color: #5d1015;">
+            <blockquote class="ani4 opac" style="border-left-color: #BA111C;">
               <p>Through <strong>Philanthropy</strong>, Phi Gamma Nu chapters are able to build strong bonds with their respective communities as well. As the fraternity's brothers believe in civic responsibility, chapters nationwide organize and participate in community outreach, volunteering at animal shelters, and soup kitchens.</p>
             </blockquote>
-            <blockquote style="border-left-color: #5d1015;">
+            <blockquote class="ani5 opac" style="border-left-color: #BA111C;">
               <p>Through <strong>Community</strong>, Phi Gamma Nu believes in upholding the interest of our Alma Maters through the encouragement of high scholarship, participation in school activities, and awareness of important issues and current events on and around campus. Social events give us an opportunity to strengthen these relationships with our brothers and sisters so that they last a lifetime.</p>
             </blockquote>
-            <p>By executing these Three National Pillars, Phi Gamma Nu advances in the pursuit of its goals as a premier business fraternity. We believe that by fostering professionalism, service, and community, we can develop a group of PGN brothers well prepared for future endeavors.</p>
+            <p class="ani6 opac">By executing these Three National Pillars, Phi Gamma Nu advances in the pursuit of its goals as a premier business fraternity. We believe that by fostering professionalism, service, and community, we can develop a group of PGN brothers well prepared for future endeavors.</p>
           </div><!-- /.blog-post -->
 
             
-            <footer>
+            <footer class="ani7 opac" style="color: #333;">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&middot; Phi Gamma Nu Professional Fraternity &middot;<a class="nationals-link" href="http://phigammanu.com"> Nationals </a>&middot;</p>
       </footer>
@@ -96,5 +98,66 @@
 
     </div><!-- /.container -->
     
+    <script type="text/javascript">
+        $(window).load(function(){ 
+            $('.navbar-wrapper').removeClass('opac');
+            $('.back-image').removeClass('opac');
+            
+            $('.back-image').addClass('animated fadeIn');
+            $('.navbar-wrapper').addClass('animated slideInLeft');
+            setTimeout(function(){
+                $('.ani1').removeClass('opac');
+                $('.ani1').addClass('animated bounceInUp');
+            }, 800);
+            setTimeout(function(){
+                $('.ani2').removeClass('opac');
+                $('.ani2').addClass('animated bounceInUp');
+            }, 1000);
+            setTimeout(function(){
+                $('.ani3').removeClass('opac');
+                $('.ani3').addClass('animated bounceInUp');
+            }, 1200);
+            setTimeout(function(){
+                $('.ani4').removeClass('opac');
+                $('.ani4').addClass('animated bounceInUp');
+            }, 1400);
+            setTimeout(function(){
+                $('.ani5').removeClass('opac');
+                $('.ani5').addClass('animated bounceInUp');
+            }, 1600);
+            setTimeout(function(){
+                $('.ani6').removeClass('opac');
+                $('.ani6').addClass('animated bounceInUp');
+            }, 1800);
+            setTimeout(function(){
+                $('.ani7').removeClass('opac');
+                $('.ani7').addClass('animated bounceInUp');
+            }, 2000);
+            
+        });
+        
+        $('.nav-click').click(function(){
+            var url = $(this).attr('href');
+            if (url === "#") {
+                return;
+            }
+            $('.back-image').addClass('animated fadeOut');
+            $('.navbar-wrapper').addClass('animated slideOutLeft');
+            $('.ani7').addClass('animated bounceOutDown');
+            $('.ani6').addClass('animated bounceOutDown');
+            $('.ani5').addClass('animated bounceOutDown');
+            $('.ani4').addClass('animated bounceOutDown');
+            $('.ani3').addClass('animated bounceOutDown');
+            $('.ani2').addClass('animated bounceOutDown');
+            $('.ani1').addClass('animated bounceOutDown');
+            
+            setTimeout(function(){
+                document.location.href = url;
+            }, 1000);
+            return false;
+        });
+        
+      </script>
+      
   </body>
 </html>

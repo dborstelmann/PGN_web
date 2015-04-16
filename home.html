@@ -37,14 +37,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Phi Gamma Nu</a>
+              <a class="navbar-brand" style="font-family: 'Georgia', serif; font-size: 32px;" href="#">&#934; &#915; &#925;</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="pillars.html">Our Pillars</a></li>
-                <li><a href="recruitment.html">Recruitment</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a class="nav-click" href="about.html">About Us</a></li>
+                <li><a class="nav-click" href="pillars.html">Our Pillars</a></li>
+                <li><a class="nav-click" href="recruitment.html">Recruitment</a></li>
+                <li><a class="nav-click" href="contact.html">Contact Us</a></li>
               </ul>
                 <div class="navbar-header navbar-right" style="margin-right: 6px; margin-top: 4px;">
                 <form class="form-inline">
@@ -195,24 +195,47 @@
         Custom Scripts
     -->
       <script type="text/javascript">
-        $(window).load(function(){ 
+        $(window).load(function(){
             $('.chapter-name').removeClass('opac');
             $('.navbar-wrapper').removeClass('opac');
             $('#main-img').removeClass('opac');
             
-            $('#main-img').addClass('animated slideInLeft');
-            $('.chapter-name').addClass('animated slideInLeft');
-            $('.navbar-wrapper').addClass('animated slideInRight');
-            setTimeout(function(){
+            var top = $('body').scrollTop();
+            if (top ==  0) {
+                $('#main-img').addClass('animated fadeIn');
+                $('.chapter-name').addClass('animated slideInRight');
+                $('.navbar-wrapper').addClass('animated slideInLeft');
+                
+                setTimeout(function(){
+                    $('#professionalism-circ').removeClass('opac');
+                    $('#philanthropy-circ').removeClass('opac');
+                    $('#brotherhood-circ').removeClass('opac');
+
+                    $('#professionalism-circ').addClass('animated bounceInUp');
+                    $('#philanthropy-circ').addClass('animated bounceInUp');
+                    $('#brotherhood-circ').addClass('animated bounceInUp');
+                }, 500);
+            } else {
                 $('#professionalism-circ').removeClass('opac');
                 $('#philanthropy-circ').removeClass('opac');
                 $('#brotherhood-circ').removeClass('opac');
-                
-                $('#professionalism-circ').addClass('animated bounceInUp');
-                $('#philanthropy-circ').addClass('animated bounceInUp');
-                $('#brotherhood-circ').addClass('animated bounceInUp');
-            }, 500);
+            }
             
+        });
+          
+        $('.nav-click').click(function(){
+            var url = $(this).attr('href');
+            $('#main-img').addClass('animated fadeOut');
+            $('.chapter-name').addClass('animated slideOutRight');
+            $('.navbar-wrapper').addClass('animated slideOutLeft');
+            $('#professionalism-circ').addClass('animated bounceOutDown');
+            $('#philanthropy-circ').addClass('animated bounceOutDown');
+            $('#brotherhood-circ').addClass('animated bounceOutDown');
+            
+            setTimeout(function(){
+                document.location.href = url;
+            }, 1000);
+            return false;
         });
         
 //        $('').bind('beforeunload', function(){
